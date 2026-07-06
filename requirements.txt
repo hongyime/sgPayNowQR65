@@ -1,4 +1,4 @@
 colorama==0.4.6
 Pillow>=12.3.0
-qrcode==7.3.1
+qrcode==8.2
 tqdm>=4.66.0
