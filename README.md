@@ -36,3 +36,7 @@ You can edit `generatePayNowQR.py` constants directly to configure defaults:
 - `START_PHONE_NUM` / `END_PHONE_NUM`
 - `QR_FILL_RGB`: Changes the QR code primary color.
 - `LOGO_FILENAME`: Set to `paynow_logo.png` by default. Place the image next to the script to embed it inside the QR code automatically.
+
+## License
+
+Apache-2.0. See [LICENSE](LICENSE) and [NOTICE](NOTICE).
