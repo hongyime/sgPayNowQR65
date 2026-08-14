@@ -17,9 +17,25 @@ checkpoint.pkl
 # Output files
 *.png
 
+templates/
+.env
+.env.*
+node_modules/
+dist/
+build/
+.next/
+coverage/
+.pytest_cache/
+
 # AI / editor dot directories (managed via sourcerepo)
 .*
 !.github/
+!.agents/
+.agents/*
+!.agents/STATE.md
+!.agents/JOURNAL.md
+!.agents/handoffs/
+!.agents/handoffs/**
 !.gitignore
 !.gitattributes
 !.gitmodules
@@ -45,12 +61,4 @@ checkpoint.pkl
 skills/
 skills-lock.json
 docs/
-templates/
-.env
-.env.*
-node_modules/
-dist/
-build/
-.next/
-coverage/
-.pytest_cache/
+# End AI / editor dot directories (managed via sourcerepo)
