@@ -1,0 +1,11 @@
+{
+  "task": "Preserve existing output files during directory validation",
+  "branch": "fix/output-path-probe",
+  "base": "main",
+  "diagnosis": "The fixed .write_test_temp probe truncates and deletes an existing file, and rejects a writable directory when that child name is already a directory.",
+  "change": "Use an exclusively created temporary probe with context-managed cleanup; report creation and write failures without modifying pre-existing paths.",
+  "local_validation": "12 cases run: 11 pass and one symlink case is skipped because the local Windows account cannot create symlinks. Includes concurrent validation and simulated permission/disk-write errors. Hosted Linux and Windows checks must pass before release.",
+  "generation_or_data_changes": "No QR generation, phone enumeration, payment, provider call or real checkpoint access. Generator, launcher and checkpoint behavior are unchanged.",
+  "remaining_findings": "Checkpoint atomicity and range/output binding, range memory usage, launcher checkpoint deletion/input handling, and import-time signal ownership remain separate follow-ups.",
+  "next": "Pass required hosted checks, release the source, and verify the main-branch run. This CLI repo has no Vercel project link or deployment workflow; the portfolio Vercel hold still applies elsewhere."
+}

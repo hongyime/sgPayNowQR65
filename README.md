@@ -31,6 +31,10 @@ Run the `run_script.bat` file. You will be greeted with an interactive menu:
 ### 3. Output Directory
 The script leverages `download_path_manager.py` to securely prompt for the output folder for your QR codes. The directory will be validated and automatically created for you.
 
+Directory validation uses an exclusively created temporary probe and removes only that probe. Existing files, directories and symbolic links named `.write_test_temp` are preserved. Failed probe creation or writes still report an error. This protects output-folder validation; it does not change checkpoint or QR generation behavior.
+
+Run `python -m unittest discover -v` for the helper and output-directory regressions. The tests use isolated synthetic files and do not generate QR codes or read existing checkpoints.
+
 ## Configuration
 You can edit `generatePayNowQR.py` constants directly to configure defaults:
 - `START_PHONE_NUM` / `END_PHONE_NUM`
