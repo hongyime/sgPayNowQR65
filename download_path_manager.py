@@ -22,6 +22,7 @@ import os
 import sys
 import atexit
 import signal
+import tempfile
 from pathlib import Path
 from typing import Optional
 
@@ -195,9 +196,10 @@ def _validate_and_create_path(path_str: str, context: str) -> str:
     
     # Test write access
     try:
-        test_file = path / '.write_test_temp'
-        test_file.write_text('test')
-        test_file.unlink()
+        # Own a uniquely created probe; never overwrite or unlink a caller's file.
+        with tempfile.NamedTemporaryFile(mode='w', encoding='utf-8', prefix='.write_test_', dir=path) as test_file:
+            test_file.write('test')
+            test_file.flush()
     except PermissionError:
         raise PermissionError(f"No write permission for directory: {path}")
     except Exception as e:
