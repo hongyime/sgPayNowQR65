@@ -11,7 +11,7 @@ A production-ready Python toolkit designed to mass-generate PayNow QR codes for 
 
 ## Prerequisites
 - Python 3.8+
-- Windows (batch scripts are natively supported, but Python scripts work cross-platform)
+- Windows or Linux (batch menus are Windows-specific; the Python CLI runs on both)
 
 ## Setup & Usage
 
@@ -34,6 +34,23 @@ The script leverages `download_path_manager.py` to securely prompt for the outpu
 Directory validation uses an exclusively created temporary probe and removes only that probe. Existing files, directories and symbolic links named `.write_test_temp` are preserved. Failed probe creation or writes still report an error. This protects output-folder validation; it does not change checkpoint or QR generation behavior.
 
 Run `python -m unittest discover -v` for the helper and output-directory regressions. The tests use isolated synthetic files and do not generate QR codes or read existing checkpoints.
+
+## Linux commands
+
+```sh
+sh setup.sh
+sh run_script.sh --help
+# After reviewing the CLI options, supply the range you intend to process:
+sh run_script.sh --start FIRST_NUMBER --end LAST_NUMBER
+```
+
+Linux setup creates `.venv-linux` separately from the Windows `.venv`. Set
+`VENV_DIR` to a Linux-local directory when using an SMB checkout; use the same
+value for setup and launch. Setup preserves existing invalid environments.
+The launcher forwards arguments and exit status, and never deletes checkpoints.
+Existing checkpoint/resume behavior belongs to the Python CLI. The Windows batch
+menu remains available; its checkpoint-deletion options are not run by this launcher.
+Dependency installation is explicit and needed again when requirements change.
 
 ## Configuration
 You can edit `generatePayNowQR.py` constants directly to configure defaults:
