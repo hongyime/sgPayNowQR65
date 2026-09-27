@@ -6,3 +6,5 @@
 - No hardcoded secrets; "token" match in .github/scripts/checked-bot-merge.py is a comment.
 - Tests present (test_generatePayNowQR.py, test_download_path_manager.py).
 - Clean working tree. No action required beyond reviewing PR #33.
+
+- 2026-09-27: Prepared reviewed portability/privacy changes on the current default branch with maintenance-only file selection and preserved original workspace state.
