@@ -1,3 +1,7 @@
+## Portability maintenance - 2026-09-27
+
+- Added explicit Linux setup/run entry points and separate-environment instructions. Offline stub contracts passed; launch does not delete checkpoints. No QR generation or dependency installation ran.
+
 # STATE — sgPayNowQR65
 
 **Updated**: 2026-09-16
