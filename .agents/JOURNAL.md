@@ -8,3 +8,4 @@
 - Clean working tree. No action required beyond reviewing PR #33.
 
 - 2026-09-27: Added explicit Linux setup/run entry points and separate-environment instructions. Offline stub contracts passed; launch does not delete checkpoints. No QR generation or dependency installation ran.
+- 2026-09-27: Prepared reviewed portability/privacy changes on the current default branch with maintenance-only file selection and preserved original workspace state.
